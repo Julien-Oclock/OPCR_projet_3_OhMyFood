@@ -1,0 +1,206 @@
+/***
+** ---------------------------------ANIMATION--------------------------------***
+***/
+
+@keyframes itemAppear {
+    0% {
+      transform: scale(0)
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes loader {
+    100% {
+      opacity: 0;
+      z-index: -10;
+    }
+  } 
+  
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(0.5rem);
+    }
+    75% {
+      transform: translateY(-0.5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  /*****************************************************************************
+** ---------------------------------COLOR--------------------------------***
+******************************************************************************/
+
+
+$color-purple: #9356DC;
+$color-pink: #FF79DA;
+$color-blue: #99E2D0;
+$color-dark-grey : #353535;
+$color-light-grey:rgb(243, 243, 243);
+
+
+
+  /************************************************************************************
+** -------------------------------LOADER--------------------------------***
+****************************************************************************************/
+
+.loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(75, 75, 75, 0.596);
+    animation: loader 0.01s;
+    animation-delay: 1.75s;
+    animation-fill-mode: both;
+    z-index: 2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  
+    &__item {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 50%;
+      animation: jump 1s;
+      animation-iteration-count: 2;
+   
+  
+      &Container {
+        display: flex;
+        width: 5rem;
+        justify-content: space-between;
+
+      }
+  
+      &--1 {
+        background-color: $color-purple;
+      }
+    
+      &--2 {
+        background-color: $color-pink;
+        animation-delay: 0.25s;
+      }
+    
+      &--3 {
+        background-color: $color-blue;
+        animation-delay: 0.5s;
+      }
+    }
+}
+
+ /************************************************************************************
+** -------------------------------GENERAL SETTING-------------------------------***
+****************************************************************************************/
+body{
+    background-color: #adb9b6;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+  /************************************************************************************
+** -------------------------------HEADER--------------------------------***
+****************************************************************************************/
+
+
+.header{
+    width: 100vw;
+    margin: auto;
+    background-color: white;
+    padding: 1.3rem;
+
+    &__title{
+        font-family: 'Shrikhand', cursive;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
+
+
+  /************************************************************************************
+** -------------------------------HOME PAGE NAV--------------------------------***
+****************************************************************************************/
+
+.nav {
+
+
+
+    &__header{
+        background-color: $color-light-grey;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+
+    }
+    &__header-title{
+        font-weight: 800;
+        font-size: 1.1rem;
+        padding: 1.4rem 0;
+
+    }
+
+    &__content{
+    }
+
+    &__content-title{
+        font-size: 1.3rem;
+        text-align: center;
+        font-weight: 600;
+        padding: 30px 0px;
+    }
+
+    &__content-aside{
+        font-size: 0.9rem;
+        font-weight: lighter;
+        margin: 10px 30px;
+        text-align: center;
+    }
+}
+
+
+ /************************************************************************************
+** -------------------------------footer--------------------------------***
+****************************************************************************************/
+
+.footer{
+    background-color: #353535;
+
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    &__title{
+        font-family: 'Shrikhand', cursive;
+        color: white;
+        margin: 10px 0px;
+        font-size: 1.3rem;
+    };
+
+    &__links-item{
+        margin: 10px 0px
+    }
+
+    &__links-item a, &__links-item i{
+        color: white;
+    }
+    &__links-item a:hover{
+        text-decoration: underline;
+        
+    }
+    &__icon {
+        width: 1.2rem;
+        margin-right: 0.5rem;
+      }
+
+
+}

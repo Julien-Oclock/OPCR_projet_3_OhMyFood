@@ -1,0 +1,22 @@
+{
+  "name": "opcr_projet_3_ohmyfood",
+  "version": "1.0.0",
+  "description": "Dynamisez une page Web avec des animations CSS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julien-Oclock/OPCR_projet_3_OhMyFood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julien-Oclock/OPCR_projet_3_OhMyFood/issues"
+  },
+  "homepage": "https://github.com/Julien-Oclock/OPCR_projet_3_OhMyFood#readme",
+  "dependencies": {
+    "sass": "^1.51.0"
+  }
+}
