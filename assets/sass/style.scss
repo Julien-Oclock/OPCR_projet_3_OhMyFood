@@ -1,47 +1,5 @@
-/***
-** ---------------------------------ANIMATION--------------------------------***
-***/
-
-@keyframes itemAppear {
-    0% {
-      transform: scale(0)
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes loader {
-    100% {
-      opacity: 0;
-      z-index: -10;
-    }
-  } 
-  
-  @keyframes jump {
-    0% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(0.5rem);
-    }
-    75% {
-      transform: translateY(-0.5rem);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  /*****************************************************************************
-** ---------------------------------COLOR--------------------------------***
-******************************************************************************/
-
-
-$color-purple: #9356DC;
-$color-pink: #FF79DA;
-$color-blue: #99E2D0;
-$color-dark-grey : #353535;
-$color-light-grey:rgb(243, 243, 243);
+@import'reset.scss';
+@import'settings.scss';
 
 
 
@@ -99,7 +57,6 @@ $color-light-grey:rgb(243, 243, 243);
 ** -------------------------------GENERAL SETTING-------------------------------***
 ****************************************************************************************/
 body{
-    background-color: #adb9b6;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -111,15 +68,16 @@ body{
 
 
 .header{
-    width: 100vw;
-    margin: auto;
-    background-color: white;
-    padding: 1.3rem;
+  padding: 1rem;
+  box-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.300);
+  position: relative;
+  background-color: #fff;
+
 
     &__title{
         font-family: 'Shrikhand', cursive;
         text-align: center;
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 }
 
@@ -129,8 +87,6 @@ body{
 ****************************************************************************************/
 
 .nav {
-
-
 
     &__header{
         background-color: $color-light-grey;
@@ -147,22 +103,150 @@ body{
     }
 
     &__content{
+      padding: 2rem;
+      text-align: center;
+      background-color: #fafafa;
     }
 
     &__content-title{
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         text-align: center;
         font-weight: 600;
-        padding: 30px 0px;
     }
 
     &__content-aside{
-        font-size: 0.9rem;
         font-weight: lighter;
-        margin: 10px 30px;
+        margin: 30px 30px 10px;
         text-align: center;
     }
+
+    &__content-link{
+      border: 0;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 100px;
+      color: #fff;
+      background-color: #686868;
+      background-image: linear-gradient(0deg,$color-purple,$color-pink);
+      cursor: pointer;
+      transition-duration: .25s;
+      box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
+    }
 }
+
+ /************************************************************************************
+** -------------------------------HOME PAGE Working--------------------------------***
+****************************************************************************************/
+
+.working{
+
+  padding: 2rem 1rem;
+
+  &__title{
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__list{
+    counter-reset: workingList;
+  }
+
+  &__list-item{
+    padding: 1.5rem;
+    margin: 1rem 0 1rem 0.75rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 13%);
+    border-radius: 1.25rem;
+    background-color: $color-grey;
+    display: flex;
+    counter-increment: workingList 1;
+
+
+
+    &::before {
+      content: counter(workingList) " ";
+      background: $color-purple;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+      left: -2.1rem;
+    }
+  }
+
+  &__list-icon{
+    margin-right: 1rem;
+    color: #7e7e7e;
+  }
+}
+
+
+ /************************************************************************************
+** -------------------------------HOME PAGE Restaurant--------------------------------***
+****************************************************************************************/
+
+.place{
+  background-color: $color-grey;
+  padding: 3rem 1rem;
+
+ &__title{
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__container{
+    margin: 2rem 0px;
+  }
+
+}
+.item{
+  background-color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+
+
+  
+  &__img{
+    height: 200px;
+    border-radius: 1rem 1rem 0 0;
+    object-fit: cover;
+  }
+
+  &__tag{
+    background-color: $color-blue;
+    position: absolute;
+    top : 15px;
+    right: 10px;
+    padding: 10px;
+    color: #1a7155
+
+  }
+  
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+  }
+
+  &__content-title{
+
+    h3{
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+}
+
 
 
  /************************************************************************************
