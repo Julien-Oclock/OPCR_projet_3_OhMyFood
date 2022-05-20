@@ -1,58 +1,12 @@
 @import'reset.scss';
 @import'settings.scss';
+@import'loading.scss';
 
 
 
   /************************************************************************************
 ** -------------------------------LOADER--------------------------------***
 ****************************************************************************************/
-
-.loader {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(75, 75, 75, 0.596);
-    animation: loader 0.01s;
-    animation-delay: 1.75s;
-    animation-fill-mode: both;
-    z-index: 2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  
-    &__item {
-      height: 2rem;
-      width: 2rem;
-      border-radius: 50%;
-      animation: jump 1s;
-      animation-iteration-count: 2;
-   
-  
-      &Container {
-        display: flex;
-        width: 5rem;
-        justify-content: space-between;
-
-      }
-  
-      &--1 {
-        background-color: $color-purple;
-      }
-    
-      &--2 {
-        background-color: $color-pink;
-        animation-delay: 0.25s;
-      }
-    
-      &--3 {
-        background-color: $color-blue;
-        animation-delay: 0.5s;
-      }
-    }
-}
-
  /************************************************************************************
 ** -------------------------------GENERAL SETTING-------------------------------***
 ****************************************************************************************/
@@ -163,14 +117,29 @@ body{
   &__title{
     font-size: 1.5rem;
     font-weight: 500;
+    @media screen and (min-width : $pc) {
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    @media screen and (min-width : $tablet) {
+      text-align: center;
+      padding-bottom: 50px;
+    }
   }
 
   &__list{
     counter-reset: workingList;
+
+    @media screen and (min-width : $tablet) {
+      display: flex;
+      justify-content: space-around;
+
+    }
   }
 
   &__list-item{
-    padding: 1.5rem;
+    padding: 25px;
     margin: 1rem 0 1rem 0.75rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 13%);
     border-radius: 1.25rem;
@@ -178,7 +147,12 @@ body{
     display: flex;
     counter-increment: workingList 1;
 
+    @media screen and (min-width : $tablet) {
+      justify-content: center;
+      align-items: center;
+      padding: 25px 5%;
 
+    }
 
     &::before {
       content: counter(workingList) " ";
@@ -193,12 +167,18 @@ body{
       position: relative;
       left: -2.1rem;
     }
+
+
+
   }
 
   &__list-icon{
     margin-right: 1rem;
     color: #7e7e7e;
   }
+
+
+
 }
 
 
@@ -213,10 +193,27 @@ body{
  &__title{
     font-size: 1.5rem;
     font-weight: 500;
+    @media screen and (min-width : $pc) {
+      text-align: center;
+    }
+    @media screen and (min-width : $tablet) {
+      text-align: center;
+    }
+
   }
+
 
   &__container{
     margin: 2rem 0px;
+    padding-bottom: 50px;
+
+
+
+    @media screen and (min-width : $tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
   }
 
 }
@@ -228,6 +225,12 @@ body{
   margin-bottom: 30px;
   position: relative;
   width: 100%;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 13%);
+
+  @media screen and (min-width : $tablet) {
+    width: 40%;
+    margin: 15px;
+  }
 
 
   
@@ -283,18 +286,16 @@ body{
     height: 450px;
     width: 100%;
     object-fit: cover;
-    position: absolute;
 }
 
 .menu{
-  margin-top: -50px;
+  top: -100px;
   border-radius: 25px  25px 0 0;
   background-color: #f6f6f6;
   z-index: 1;
-  position: relative;
-  top:350px;
-  max-width: 1350px;
+  max-width: $pc;
   margin: 0 auto;
+  position: relative;
 
  
 }
@@ -345,6 +346,7 @@ body{
     margin: 15px 0;
     box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
     justify-content: space-between;
+    animation: ease-in .6s;
   }
   &__item-title{
     font-weight: 500;
@@ -383,12 +385,20 @@ body{
 
 .footer{
     background-color: #353535;
+    width: 100%;
+    margin-top: -100px;
+ 
 
 
     &__wrapper{
         display: flex;
         flex-direction: column;
         padding: 1rem;
+
+        @media screen and (min-width : $pc) {
+
+          padding-left: 100px;
+        }
     }
 
     &__title{
@@ -416,3 +426,5 @@ body{
 
 
 }
+
+
