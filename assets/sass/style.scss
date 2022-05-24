@@ -19,7 +19,6 @@
   align-items: center;
   justify-content: center;
 
-
     &__title{
         font-family: 'Shrikhand', cursive;
         text-align: center;
@@ -90,8 +89,14 @@
       background-image: linear-gradient(0deg,$color-purple,$color-pink);
       cursor: pointer;
       box-shadow: 5px  5px 8px rgb(0 0 0 / 25%);
-    }
-    
+      transition-duration: 0.45s;
+
+
+      &:hover{
+      box-shadow: 10px  10px 16px rgb(0 0 0 / 30%);
+      background-image: linear-gradient(0deg,$color-purple-light,$color-pink-light);
+      }
+    }  
 }
 
  /*************************************************************************************
@@ -122,7 +127,6 @@
     @media screen and (min-width : $tablet) {
       display: flex;
       justify-content: space-around;
-
     }
   }
 
@@ -155,18 +159,12 @@
       position: relative;
       left: -2.1rem;
     }
-
-
-
   }
 
   &__list-icon{
     margin-right: 1rem;
     color: #7e7e7e;
   }
-
-
-
 }
 
 
@@ -183,13 +181,14 @@
  &__title{
     font-size: 1.5rem;
     font-weight: 500;
+
     @media screen and (min-width : $pc) {
       text-align: center;
     }
+
     @media screen and (min-width : $tablet) {
       text-align: center;
     }
-
   }
 
 
@@ -197,15 +196,12 @@
     margin: 2rem 0px;
     padding-bottom: 50px;
 
-
-
     @media screen and (min-width : $tablet) {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
     }
   }
-
 }
 .item{
   background-color: #fff;
@@ -237,7 +233,6 @@
     right: 10px;
     padding: 10px;
     color: #1a7155
-
   }
   
   &__content{
@@ -261,9 +256,11 @@
   &__like--valid{
     display: none;
   }
+
   &:hover &__like--empty{
     display: none;
   }
+
   &:hover &__like--valid{
       display: block;
       background: #f09433; 
@@ -274,15 +271,11 @@
       color:transparent;
       -webkit-background-clip: text;
       background-clip: text;
-    
   }
 
 
 
 }
-
-
-
 
 
 /********************************************************************************************************************************
@@ -309,9 +302,6 @@
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
-
-
-  
 }
 
 .menu-header{
@@ -320,20 +310,18 @@
   justify-content: space-between;
   padding: 40px 15px;
 
-
   &__title{
     font-family: Shrikhand,"cursive";
     font-size: 1.5rem;
     font-weight: bold;
     width: 40%;
     line-height: 1.4;
-
   }
 }
 .menu-content{
   padding: 15px;
-  @media screen and (min-width : $pc) {
 
+  @media screen and (min-width : $pc) {
     display: flex;
     justify-content: space-around;
   }
@@ -344,7 +332,6 @@
     font-weight: 400;
     text-transform: uppercase;
     position: relative;
-
 
     &::after {
       content: "";
@@ -380,6 +367,7 @@
   box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
   overflow: hidden;
   animation: pop-in .9s;
+
 
 
   @media screen and (min-width : $pc) {
@@ -450,7 +438,11 @@
 
 }
 
-
+@for $i from 0 to 10 {
+  .gap-#{$i} {
+    animation-delay:  #{$i/10}s;
+  }
+}
 
 .btn-wrapper{
   display: flex;
@@ -468,6 +460,11 @@
     background-image: linear-gradient(0deg,$color-purple,$color-pink);
     cursor: pointer;
     box-shadow: 5px  5px 10px rgb(0 0 0 / 15%);
+
+    &:hover{
+      box-shadow: 10px  10px 16px rgb(0 0 0 / 30%);
+      background-image: linear-gradient(0deg,$color-purple-light,$color-pink-light);
+      }
   }
 }
 
@@ -480,20 +477,17 @@
     background-color: #353535;
     margin-top: -100px;
     padding-left: 5px;
+
   @media screen and (min-width : $pc) {
     padding: 0;
   }
-
- 
-
 
     &__wrapper{
         display: flex;
         flex-direction: column;
         padding: 1rem;
-        width: 1400px;
+        max-width: 1400px;
         margin: 0 auto;
-
     }
 
     &__title{
@@ -510,10 +504,11 @@
     &__links-item a, &__links-item i{
         color: white;
     }
+
     &__links-item a:hover{
-        text-decoration: underline;
-        
+        text-decoration: underline; 
     }
+
     &__icon {
         width: 1.2rem;
         margin-right: 0.5rem;
