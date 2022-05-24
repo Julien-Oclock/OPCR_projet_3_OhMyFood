@@ -347,17 +347,83 @@ body{
     box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
     justify-content: space-between;
     animation: ease-in .6s;
-  }
-  &__item-title{
-    font-weight: 500;
-    padding-bottom: 5px;
-
-  }
-
-  &__item-aside{
-    font-weight: 300;
+    overflow: hidden;
   }
 }
+
+.menu-item{
+  background-color: #fff;
+  padding: 15px;
+  display: flex;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
+  overflow: hidden;
+
+  &__header{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  &__title{
+    font-weight: 500;
+    padding-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__aside{
+    font-weight: 300;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__validation{
+    background-color: $color-blue;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition-duration: 0.5s;
+    border-radius: 0px 15px 15px 0px;
+    overflow: hidden;
+  }
+
+  &__price{
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0.5rem;
+  }
+
+  &__icon-wrapper{
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 50%;
+    transition-duration: 0.9s;
+  }
+
+  &:hover &__validation {
+    margin-right: -1rem;
+  }
+
+  &__icon {
+    color: $color-blue;
+  }
+
+}
+
+
 
 .btn-wrapper{
   display: flex;
