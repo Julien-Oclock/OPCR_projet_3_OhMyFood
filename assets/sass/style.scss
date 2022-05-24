@@ -4,18 +4,6 @@
 
 
 
-  /************************************************************************************
-** -------------------------------LOADER--------------------------------***
-****************************************************************************************/
- /************************************************************************************
-** -------------------------------GENERAL SETTING-------------------------------***
-****************************************************************************************/
-body{
-    font-family: 'Roboto', sans-serif;
-
-}
-
-
 
   /************************************************************************************
 ** -------------------------------HEADER--------------------------------***
@@ -293,11 +281,12 @@ body{
   border-radius: 25px  25px 0 0;
   background-color: #f6f6f6;
   z-index: 1;
-  max-width: $pc;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
 
- 
+
+  
 }
 
 .menu-header{
@@ -318,6 +307,11 @@ body{
 }
 .menu-content{
   padding: 15px;
+  @media screen and (min-width : $pc) {
+
+    display: flex;
+    justify-content: space-around;
+  }
 
   &__title{
     font-size: 1.2rem;
@@ -346,8 +340,9 @@ body{
     margin: 15px 0;
     box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
     justify-content: space-between;
-    animation: ease-in .6s;
     overflow: hidden;
+    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+    animation-fill-mode: both;
   }
 }
 
@@ -359,6 +354,14 @@ body{
   margin: 15px 0;
   box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
   overflow: hidden;
+  animation: pop-in .9s;
+
+
+  @media screen and (min-width : $pc) {
+    min-width: 350px;
+    max-width: 350px;
+  }
+
 
   &__header{
     white-space: nowrap;
@@ -389,7 +392,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    transition-duration: 0.5s;
+    transition-duration: 0.8s;
     border-radius: 0px 15px 15px 0px;
     overflow: hidden;
   }
@@ -410,7 +413,6 @@ body{
     align-items:center;
     justify-content:center;
     border-radius: 50%;
-    transition-duration: 0.9s;
   }
 
   &:hover &__validation {
