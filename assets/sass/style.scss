@@ -30,6 +30,26 @@
       font-size: 1.3rem;
     }
 }
+.header {
+  &--arrow {
+    position: relative;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 10px;
+    height: 10px;
+    width: 10px;
+    top: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: black;
+    padding-bottom: 18px;
+  }
+}
 
 
 
@@ -106,6 +126,8 @@
 .working{
 
   padding: 2rem 1rem;
+  width: 58%;
+  margin: auto;
 
   &__title{
     font-size: 1.5rem;
@@ -172,6 +194,8 @@
 ** ------------------------------Restaurant--------------------------------***
 ****************************************************************************************/
 
+
+
 .place{
   background-color: $color-grey;
   padding: 3rem 0rem;
@@ -181,6 +205,7 @@
  &__title{
     font-size: 1.5rem;
     font-weight: 500;
+    margin: 5px;
 
     @media screen and (min-width : $pc) {
       text-align: center;
@@ -193,7 +218,7 @@
 
 
   &__container{
-    margin: 2rem 0px;
+    margin: 2rem 5px;
     padding-bottom: 50px;
 
     @media screen and (min-width : $tablet) {
@@ -212,6 +237,8 @@
   position: relative;
   width: 100%;
   box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 13%);
+  cursor: pointer;
+
 
   @media screen and (min-width : $tablet) {
     width: 40%;
@@ -252,31 +279,32 @@
   }
 }
 
+
 .icon-container{
+  padding-right: 1px;
+  &__like--empty{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
   &__like--valid{
-    display: none;
+    position: absolute;
+    font-size: 0px;
+    transition: top 0.3s, font-size 0.3s, left 0.3s;
+    background: linear-gradient(0deg,$color-purple,$color-pink);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  &:hover &__like--empty{
-    display: none;
+  &__like--empty:hover &__like--valid{
+    top: 2.5px;
+    font-size: 25px;
+    left: 3.2px;
   }
-
-  &:hover &__like--valid{
-      display: block;
-      background: #f09433; 
-      background: -moz-linear-gradient(0deg,$color-purple,$color-pink);; 
-      background: -webkit-linear-gradient(0deg,$color-purple,$color-pink);; 
-      background: linear-gradient(0deg,$color-purple,$color-pink);; 
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF79DA', endColorstr='#9356DC',GradientType=1 );
-      color:transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
-  }
-
-
-
 }
-
 
 /********************************************************************************************************************************
 /********************************************************************************************************************************
@@ -344,18 +372,7 @@
     }
   }
 
-  &__item{
-    background-color: #fff;
-    padding: 15px;
-    display: flex;
-    border-radius: 15px;
-    margin: 15px 0;
-    box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
-    justify-content: space-between;
-    overflow: hidden;
-    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
-    animation-fill-mode: both;
-  }
+
 }
 
 .menu-item{
@@ -366,7 +383,14 @@
   margin: 15px 0;
   box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
   overflow: hidden;
-  animation: pop-in .9s;
+  animation: pop-in 0.9s;
+  animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+  animation-fill-mode: both;
+  opacity: 0;
+  transform: scaleY(0);
+  max-width: 100%;
+  cursor: pointer;
+
 
 
 
