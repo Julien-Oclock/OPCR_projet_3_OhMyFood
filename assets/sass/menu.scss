@@ -1,0 +1,190 @@
+
+
+
+
+ 
+/********************************************************************************************************************************
+/********************************************************************************************************************************
+/********************************************************************************************************************************
+** -------------------------------RESTAURANT PAGE--------------------------------**************************************************
+ *********************************************************************************************************************************
+ *********************************************************************************************************************************
+*********************************************************************************************************************************/
+
+
+.banner-image{
+    max-width: 100%;
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.menu{
+  top: -100px;
+  border-radius: 25px  25px 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.menu-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 15px;
+
+  &__title{
+    font-family: Shrikhand,"cursive";
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 40%;
+    line-height: 1.4;
+  }
+}
+.menu-content{
+  padding: 15px;
+
+  @media screen and (min-width : $pc) {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__title{
+    font-size: 1.2rem;
+    padding:10px 0px;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 50px;
+      height: 4px;
+      background-color: $color-blue;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+
+}
+
+.menu-item{
+  background-color: #fff;
+  padding: 15px;
+  display: flex;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
+  overflow: hidden;
+  animation: pop-in 0.9s;
+  animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+  animation-fill-mode: both;
+  opacity: 0;
+  transform: scaleY(0);
+  max-width: 100%;
+  cursor: pointer;
+
+
+
+
+  @media screen and (min-width : $pc) {
+    min-width: 350px;
+    max-width: 350px;
+  }
+
+
+  &__header{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  &__title{
+    font-weight: 500;
+    padding-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__aside{
+    font-weight: 300;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__validation{
+    background-color: $color-blue;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition-duration: 0.8s;
+    border-radius: 0px 15px 15px 0px;
+    overflow: hidden;
+  }
+
+  &__price{
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0.5rem;
+  }
+
+  &__icon-wrapper{
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 50%;
+  }
+
+  &:hover &__validation {
+    margin-right: -1rem;
+  }
+
+  &__icon {
+    color: $color-blue;
+  }
+
+}
+
+@for $i from 0 to 10 {
+  .gap-#{$i} {
+    animation-delay:  #{$i/10}s;
+  }
+}
+
+.btn-wrapper{
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 3rem 0;
+
+  button{
+    border: 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 100px;
+    color: #fff;
+    background-image: linear-gradient(0deg,$color-purple,$color-pink);
+    cursor: pointer;
+    box-shadow: 5px  5px 10px rgb(0 0 0 / 15%);
+
+    &:hover{
+      box-shadow: 10px  10px 16px rgb(0 0 0 / 30%);
+      background-image: linear-gradient(0deg,$color-purple-light,$color-pink-light);
+      }
+  }
+}
