@@ -80,10 +80,8 @@
   margin: 15px 0;
   box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
   overflow: hidden;
-  animation: pop-in 0.9s;
-  animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
-  animation-fill-mode: both;
-  opacity: 0;
+  animation: pop-in 0.9s; // j'utilise l'animation 'pop-in' que j'ai créer dans le fichier 'settings.css'
+  opacity: 0; // au départ les elements ont une opacité de 0 et son donc invisible pour l'utlisateur. l'animation pop-in les fera apparaitre. 
   transform: scaleY(0);
   max-width: 100%;
   cursor: pointer;
@@ -159,9 +157,11 @@
 
 }
 
-@for $i from 0 to 10 {
+
+// utilisation d'une boucle pour afficher les item du menu les un après les autres en utlisant les classe html.
+@for $i from 0 to 9 { // il y au au maximum 10 item dans un menu de restaurant (0 à 9)
   .gap-#{$i} {
-    animation-delay:  #{$i/10}s;
+    animation-delay:  #{$i/10}s; // je met un delais sur l'animation d'entrer des items. il apparaitron les un après les autres.
   }
 }
 
