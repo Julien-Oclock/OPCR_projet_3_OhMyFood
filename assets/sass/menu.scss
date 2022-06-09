@@ -35,11 +35,16 @@
   justify-content: space-between;
   padding: 40px 15px;
 
+  @media screen and (min-width : $pc){
+    width:95%;
+    margin: 0 auto;
+  }
+
   &__title{
     font-family: Shrikhand,"cursive";
     font-size: 1.5rem;
     font-weight: bold;
-    width: 40%;
+    width: 70%;
     line-height: 1.4;
   }
 }
@@ -81,8 +86,6 @@
   box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
   overflow: hidden;
   animation: pop-in 0.9s; // j'utilise l'animation 'pop-in' que j'ai créer dans le fichier 'settings.css'
-  opacity: 0; // au départ les elements ont une opacité de 0 et son donc invisible pour l'utlisateur. l'animation pop-in les fera apparaitre. 
-  transform: scaleY(0);
   max-width: 100%;
   cursor: pointer;
 
@@ -147,12 +150,21 @@
     border-radius: 50%;
   }
 
+
+
   &:hover &__validation {
     margin-right: -1rem;
+
+  }
+
+  &:hover &__icon{
+    transform : rotate(360deg);
+
   }
 
   &__icon {
     color: $color-blue;
+    transition : transform 0.7s;
   }
 
 }
@@ -161,7 +173,7 @@
 // utilisation d'une boucle pour afficher les item du menu les un après les autres en utlisant les classe html.
 @for $i from 0 to 9 { // il y au au maximum 10 item dans un menu de restaurant (0 à 9)
   .gap-#{$i} {
-    animation-delay:  #{$i/10}s; // je met un delais sur l'animation d'entrer des items. il apparaitron les un après les autres.
+    animation-delay:  #{$i/10}s; // je met un delais sur l'animation d'entrer des items. ils apparaitront les un après les autres.
   }
 }
 
@@ -173,9 +185,9 @@
 
   button{
     border: 0;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    font-size: 1.1rem;
+    padding: 1.5rem 2rem;
+    font-weight: 400;
+    font-size: 1.4rem;
     border-radius: 100px;
     color: #fff;
     background-image: linear-gradient(0deg,$color-purple,$color-pink);

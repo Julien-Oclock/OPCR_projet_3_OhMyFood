@@ -18,14 +18,17 @@
 
     }
     &__header-title{
-        font-weight: 800;
+        font-weight: 400;
         font-size: 1.1rem;
-        padding: 1.4rem 0;
+        padding: 1.4rem 1.4rem;
 
+    }
+    &__header-icon{
+      margin-right: 15px;
     }
 
     &__content{
-      padding: 2rem;
+      padding: 2rem 0;
       text-align: center;
       background-color: #fafafa;
     }
@@ -38,14 +41,15 @@
 
     &__content-aside{
         font-weight: lighter;
-        margin: 30px 30px 10px;
+        margin: 30px 10px;
         text-align: center;
     }
 
     &__content-link{
       border: 0;
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
+      padding: 1.5rem 1.5rem;
+      margin : 30px 0px;
+      font-weight: 400;
       font-size: 1.1rem;
       border-radius: 80px;
       color: #fff;
@@ -68,9 +72,8 @@
 
 .working{
 
-  padding: 2rem 1rem;
-  width: 90%;
-  margin: auto;
+  padding: 2rem 1.5rem;
+  margin : auto;
 
 
   @media screen and (min-width : $pc) {
@@ -81,7 +84,6 @@
   &__title{
     font-size: 1.5rem;
     font-weight: 500;
-    text-align: center;
 
     @media screen and (min-width : $pc) {
       text-align: center;
@@ -124,14 +126,13 @@
       background: $color-purple;
       height: 1.5rem;
       width: 1.5rem;
-      padding: 3px;
-      border-radius: 50%;
+      border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
       position: relative;
-      left: -2.1rem;
+      left: -30px;
     }
   }
 
@@ -148,7 +149,7 @@
 
 .place{
     background-color: $color-grey;
-    padding: 3rem 0rem;
+    padding: 3rem 1.5rem;
     max-width: 1400px;
     margin: 0 auto;
   
@@ -156,7 +157,6 @@
       font-size: 1.5rem;
       font-weight: 500;
       margin: 5px;
-      text-align: center;
   
       @media screen and (min-width : $pc) {
         text-align: center;
@@ -237,6 +237,7 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      font-weight: 100;
     }
   
     &__like--valid{
@@ -250,9 +251,9 @@
     }
   
     &__like--empty:hover &__like--valid{
-      top: 2.7px;
+      top: 2.6px;
       font-size: 26px;
-      left: 5px;
+      left: 4px;
     }
   }
   
