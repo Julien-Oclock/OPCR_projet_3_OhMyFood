@@ -47,9 +47,9 @@
 
     &__content-link{
       border: 0;
-      padding: 1.5rem 1.5rem;
-      margin : 30px 0px;
-      font-weight: 400;
+      padding: 1.1rem 1.3rem;
+      margin : 20px 0px;
+      font-weight: 500;
       font-size: 1.1rem;
       border-radius: 80px;
       color: #fff;
@@ -77,13 +77,19 @@
 
 
   @media screen and (min-width : $pc) {
-    width: 60%;
-}
+    width: 90%;
+  
+  }
+  @media screen and (min-width : 1800px) {
+  width: 70%;
+  }
 
 
   &__title{
     font-size: 1.5rem;
     font-weight: 500;
+    margin-bottom: 2rem;
+
 
     @media screen and (min-width : $pc) {
       text-align: center;
@@ -100,8 +106,14 @@
     counter-reset: workingList;
 
     @media screen and (min-width : $tablet) {
+      width: 70%;
+      margin : auto;
+    }
+
+    @media screen and (min-width : $pc) {
       display: flex;
       justify-content: space-around;
+      width : 100%
     }
   }
 
@@ -113,26 +125,34 @@
     background-color: $color-grey;
     display: flex;
     counter-increment: workingList 1;
+    position:relative;
 
     @media screen and (min-width : $tablet) {
       justify-content: center;
       align-items: center;
-      padding: 25px 5%;
+      padding: 20px 5%;
+      margin : 20px auto;
+      width: 600px;
 
+      @media screen and (min-width : $pc) {
+        width: 30%;
+      }
     }
+
 
     &::before {
       content: counter(workingList) " ";
       background: $color-purple;
       height: 1.5rem;
       width: 1.5rem;
-      border-radius: 20px;
+      border-radius: 30px;
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
-      position: relative;
-      left: -30px;
+      position: absolute;
+      left: -10px;
+      
     }
   }
 
@@ -251,9 +271,9 @@
     }
   
     &__like--empty:hover &__like--valid{
-      top: 2.6px;
+      top: 0.20rem;
       font-size: 26px;
-      left: 4px;
+      left: 0.17rem;
     }
   }
   
