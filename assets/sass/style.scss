@@ -13,7 +13,8 @@
 
 
 .header{
-  padding: 1rem;
+  padding-top: 1.8rem;
+  padding-bottom: 0.8rem;
   box-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.300);
   display: flex;
   position: relative;
@@ -30,6 +31,7 @@
     &__icon{
       margin: 10px;
       font-size: 1.3rem;
+      padding-top: 12px;
     }
 }
 .header {

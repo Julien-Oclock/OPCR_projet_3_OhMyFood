@@ -18,7 +18,7 @@
 
     }
     &__header-title{
-        font-weight: 400;
+        font-weight: 500;
         font-size: 1.1rem;
         padding: 1.4rem 1.4rem;
 
@@ -40,14 +40,14 @@
     }
 
     &__content-aside{
-        font-weight: lighter;
+        font-weight:400;
         margin: 30px 10px;
         text-align: center;
     }
 
     &__content-link{
       border: 0;
-      padding: 1.1rem 1.3rem;
+      padding: 1.1rem 1.5rem;
       margin : 20px 0px;
       font-weight: 500;
       font-size: 1.1rem;
@@ -72,7 +72,7 @@
 
 .working{
 
-  padding: 2rem 1.5rem;
+  padding: 2rem 0.8rem;
   margin : auto;
 
 
@@ -80,8 +80,8 @@
     width: 90%;
   
   }
-  @media screen and (min-width : 1800px) {
-  width: 70%;
+  @media screen and (min-width : 1600px) {
+  width: 60%;
   }
 
 
@@ -93,12 +93,12 @@
 
     @media screen and (min-width : $pc) {
       text-align: center;
-      padding-bottom: 50px;
+      padding-bottom: 30px;
     }
 
     @media screen and (min-width : $tablet) {
       text-align: center;
-      padding-bottom: 50px;
+      padding-bottom: 20px;
     }
   }
 
@@ -169,7 +169,7 @@
 
 .place{
     background-color: $color-grey;
-    padding: 3rem 1.5rem;
+    padding: 3rem 0.8rem;
     max-width: 1400px;
     margin: 0 auto;
   
@@ -219,9 +219,13 @@
   
     
     &__img{
-      height: 200px;
+      height: 150px;
       border-radius: 1rem 1rem 0 0;
       object-fit: cover;
+
+      @media screen and (min-width : $tablet) {
+        height : 250px
+      }
     }
   
     &__tag{
